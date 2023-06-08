@@ -84,11 +84,15 @@ body {
     margin-right: auto !important;
 }
 
-.cover-container {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)), url(assets/aot_images/aot_bg.jpg);
+.cover-container,
+.bio-container {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.cover-container {
+    padding: 50px 16px;
 }
 
 .inner-logo {
@@ -113,6 +117,10 @@ body {
     padding: 25px 0;
 }
 
+.cover-container .jumbotron-button {
+    justify-content: flex-start;
+}
+
 .jumbotron-cover img {
     width: 100%;
     max-width: 350px;
@@ -123,7 +131,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 25px 0;
+    padding: 0px 0px 25px 0px;
 }
 
 .jumbotron-cover-tracklist ol {
@@ -136,6 +144,7 @@ body {
     line-height: 22px;
     letter-spacing: 0.01em;
     margin: 0;
+    padding-inline-start: 23px;
 }
 
 .jumbotron-cover-tracklist ol li {
@@ -181,7 +190,7 @@ body {
     width: 100%;
     max-width: 800px;
     position: relative;
-    border: 1px solid white;
+    border: 1px solid #000;
 }
 
 .bio-image {
@@ -208,7 +217,7 @@ body {
 
 .bio-text h1 {
     text-align: center;
-    color: white;
+    color: #000;
     letter-spacing: 0.01em;
     font-size: 14px;
     margin: 0 60px;
@@ -216,7 +225,7 @@ body {
 
 .bio-text p {
     text-align: center;
-    color: white;
+    color: #000;
     font-size: 14px;
     line-height: 1.8em;
 }
@@ -428,6 +437,18 @@ footer ul li {
 
     .jumbotron-cover img {
         max-width: 550px;
+    }
+
+    .jumbotron-cover-tracklist {
+        padding: 25px 0px;
+    }
+
+    .jumbotron-cover-tracklist ol {
+        padding-inline-start: 60px;
+    }
+
+    .cover-container .jumbotron-button {
+        justify-content: center;
     }
 }
 
