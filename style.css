@@ -86,9 +86,16 @@ body {
 
 .cover-container,
 .bio-container {
+    display: block;
+    position: relative;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.bio-container {
+    z-index: 1;
+    background: white;
 }
 
 .cover-container {
@@ -102,8 +109,8 @@ body {
 }
 
 .logo {
-    width: 60%;
-    max-width: 470px;
+    width: 100px;
+    max-width: 250px;
 }
 
 .jumbotron {
@@ -119,6 +126,24 @@ body {
 
 .cover-container .jumbotron-button {
     justify-content: flex-start;
+}
+
+.blurred {
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: -20px;
+    bottom: -20px;
+    z-index: -1;
+    background: inherit;
+    background-size: cover;
+    background-origin: content-box;
+    filter: blur(10px);
+    box-shadow: 0px 0px 400px -200px rgba(255, 255, 255, 0.05) inset;
+    -webkit-box-shadow: 0px 0px 400px -200px rgba(255, 255, 255, 0.05) inset;
+    -moz-box-shadow: 0px 0px 400px -200px rgba(255, 255, 255, 0.05) inset;
 }
 
 .jumbotron-cover img {
@@ -144,12 +169,12 @@ body {
     line-height: 22px;
     letter-spacing: 0.01em;
     margin: 0;
-    padding-inline-start: 23px;
+    padding-inline-start: 32px;
 }
 
 .jumbotron-cover-tracklist ol li {
     text-transform: uppercase;
-    padding: 0px 6px 0px 6px;
+    padding: 0px 6px 0px 0px;
     text-align: left;
     font-size: 12px;
 }
@@ -234,6 +259,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
     background: #EEE;
 }
 
@@ -266,11 +292,13 @@ body {
 .row {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .item {
     display: flex;
     flex-direction: column;
+    width: calc(100% - 16px);
     min-height: 300px;
     background: #666;
     margin: 8px;
@@ -423,6 +451,11 @@ footer ul li {
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+    
+    .logo {
+        width: 120px;
+    }
+
     .jumbotron-cover-tracklist {
         flex-direction: row;
     }
@@ -432,11 +465,11 @@ footer ul li {
     }
 
     .item {
-        width: 50%;
+        width: calc(50% - 16px);
     }
 
     .jumbotron-cover img {
-        max-width: 550px;
+        max-width: 400px;
     }
 
     .jumbotron-cover-tracklist {
@@ -454,7 +487,9 @@ footer ul li {
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-    
+    .item {
+        width: calc(33.333% - 16px);
+    }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
