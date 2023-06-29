@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../favs"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "sleep"
+	}
+}
